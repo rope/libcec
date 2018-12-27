@@ -80,6 +80,7 @@ extern DECLSPEC uint32_t libcec_get_device_vendor_id(libcec_connection_t connect
 extern DECLSPEC uint16_t libcec_get_device_physical_address(libcec_connection_t connection, CEC_NAMESPACE cec_logical_address iLogicalAddress);
 extern DECLSPEC CEC_NAMESPACE cec_logical_address libcec_get_active_source(libcec_connection_t connection);
 extern DECLSPEC int libcec_is_active_source(libcec_connection_t connection, CEC_NAMESPACE cec_logical_address iAddress);
+extern DECLSPEC int libcec_activate_source(libcec_connection_t connection, int bTransmitDelayedCommandsOnly);
 extern DECLSPEC CEC_NAMESPACE cec_power_status libcec_get_device_power_status(libcec_connection_t connection, CEC_NAMESPACE cec_logical_address iLogicalAddress);
 extern DECLSPEC int libcec_poll_device(libcec_connection_t connection, CEC_NAMESPACE cec_logical_address iLogicalAddress);
 extern DECLSPEC CEC_NAMESPACE cec_logical_addresses libcec_get_active_devices(libcec_connection_t connection);

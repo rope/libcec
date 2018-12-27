@@ -218,6 +218,8 @@ namespace CEC
      */
     virtual bool IsActiveDevice(cec_logical_address iLogicalAddress) = 0;
 
+    virtual bool ActivateSource(bool bTransmitDelayedCommandsOnly) = 0;
+
     /*!
      * @brief Check whether a device of the given type is active on the bus.
      * @param type The type to check.

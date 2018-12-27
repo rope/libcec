@@ -184,6 +184,11 @@ bool CLibCEC::IsLibCECActiveSource(void)
   return m_client ? m_client->IsLibCECActiveSource() : false;
 }
 
+bool CLibCEC::ActivateSource(bool bTransmitDelayedCommandsOnly)
+{
+  return m_client ? m_client->GetPrimaryDevice()->ActivateSource(bTransmitDelayedCommandsOnly ? 500 : 0) : false;
+}
+
 bool CLibCEC::Transmit(const cec_command &data)
 {
   return m_client ? m_client->Transmit(data, false) : false;

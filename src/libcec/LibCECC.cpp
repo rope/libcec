@@ -473,6 +473,12 @@ int libcec_is_libcec_active_source(libcec_connection_t connection)
       -1;
 }
 
+int libcec_activate_source(libcec_connection_t connection, int bTransmitDelayedCommandsOnly)
+{
+  ICECAdapter* adapter = static_cast<ICECAdapter*>(connection);
+  return adapter ? (adapter->ActivateSource(bTransmitDelayedCommandsOnly) ? 1 : 0) : -1;
+}
+
 int libcec_get_device_information(libcec_connection_t connection, const char* strPort, CEC::libcec_configuration* config, uint32_t iTimeoutMs)
 {
   ICECAdapter* adapter = static_cast<ICECAdapter*>(connection);
