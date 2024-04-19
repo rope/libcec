@@ -209,7 +209,7 @@ bool CSerialSocket::SetBaudRate(uint32_t baudrate)
   if (rate == -1)
   {
     char buff[255];
-    sprintf(buff, "%i is not a valid baudrate", baudrate);
+    snprintf(buff, sizeof(buff), "%u is not a valid baudrate", baudrate);  // Use snprintf for safety
     m_strError = buff;
     return false;
   }

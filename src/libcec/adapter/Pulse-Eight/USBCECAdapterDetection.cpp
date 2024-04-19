@@ -271,8 +271,10 @@ uint8_t CUSBCECAdapterDetection::FindAdaptersApple(cec_adapter_descriptor *devic
   CFMutableDictionaryRef classesToMatch = IOServiceMatching(kIOSerialBSDServiceValue);
   if (classesToMatch)
   {
+    // Specify a search for all types of serial devices.
     CFDictionarySetValue(classesToMatch, CFSTR(kIOSerialBSDTypeKey), CFSTR(kIOSerialBSDAllTypes));
-    kresult = IOServiceGetMatchingServices(kIOMasterPortDefault, classesToMatch, &serialPortIterator);
+    // Get the iterator for matching services. No longer using kIOMasterPortDefault.
+    kresult = IOServiceGetMatchingServices(MACH_PORT_NULL, classesToMatch, &serialPortIterator);
     if (kresult == KERN_SUCCESS)
     {
       io_object_t serialService;
