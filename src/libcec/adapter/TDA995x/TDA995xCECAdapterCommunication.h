@@ -80,7 +80,7 @@ namespace CEC
     uint16_t GetFirmwareVersion(void);
     uint32_t GetFirmwareBuildDate(void) { return 0; }
     bool IsRunningLatestFirmware(void) { return true; }
-    bool PersistConfiguration(const libcec_configuration & UNUSED(configuration)) { return false; }
+    bool SaveConfiguration(const libcec_configuration & UNUSED(configuration)) { return false; }
     bool GetConfiguration(libcec_configuration & UNUSED(configuration)) { return false; }
     bool SetAutoMode(bool UNUSED(automode)) { return false; }
     std::string GetPortName(void) { return std::string("TDA995X"); }
@@ -93,6 +93,9 @@ namespace CEC
     uint16_t GetAdapterProductId(void) const { return TDA995X_ADAPTER_PID; }
     void HandleLogicalAddressLost(cec_logical_address oldAddress);
     void SetActiveSource(bool UNUSED(bSetTo), bool UNUSED(bClientUnregistered)) {}
+    #if CEC_LIB_VERSION_MAJOR >= 5
+    bool GetStats(struct cec_adapter_stats* UNUSED(stats)) { return false; }
+    #endif
     ///}
 
     /** @name P8PLATFORM::CThread implementation */

@@ -17,10 +17,11 @@
 *.suo
 *.user
 *.aps
+*.swp
 env.h
 version.h
+.vs
 
-*.rc
 AssemblyInfo.cs
 AssemblyInfo.cpp
 
@@ -73,24 +74,20 @@ project/obj
 project/Properties
 project/_*
 project/x64
-project/LibCecSharp/x64
-project/LibCecSharp/Debug
-project/LibCecSharp/Release
 project/libcec/x64
 project/libcec/Debug
 project/libcec/Release
 project/testclient/x64
 project/testclient/Debug
 project/testclient/Release
+project/nsis/libcec-version.nsh
 
 project/RPi/toolchain
 project/RPi/firmware
 project/RPi/deps
 
 src/libcec/libcec.pc
-
-src/CecSharpTester/bin
-src/CecSharpTester/obj
+src/libcec/libcec.rc
 
 src/cec-config-gui/obj
 src/cec-config/cec-config
@@ -104,3 +101,8 @@ src/libcec-wmc/obj
 /dpinst-amd64.exe
 
 /documentation
+
+/src/EventGhost/egplugin_sources/PulseEight/cec
+/src/EventGhost/pulse_eight.egplugin
+
+/src/dotnetlib/LibCecSharp/LibCecSharp.rc

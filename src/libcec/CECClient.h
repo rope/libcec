@@ -298,13 +298,14 @@ namespace CEC
     virtual void                  RescanActiveDevices(void);
     virtual bool                  IsLibCECActiveSource(void);
     bool                          AudioEnable(bool enable);
+    bool                          GetStats(struct cec_adapter_stats* stats);
 
     // configuration
     virtual bool                  GetCurrentConfiguration(libcec_configuration &configuration);
     virtual bool                  SetConfiguration(const libcec_configuration &configuration);
-    virtual bool                  CanPersistConfiguration(void);
-    virtual bool                  PersistConfiguration(const libcec_configuration &configuration);
-    virtual void                  SetPhysicalAddress(const libcec_configuration &configuration);
+    virtual bool                  CanSaveConfiguration(void);
+    virtual bool                  SaveConfiguration(const libcec_configuration &configuration);
+    virtual bool                  SetPhysicalAddress(const libcec_configuration &configuration);
 
     void QueueAddCommand(const cec_command& command);
     void QueueAddKey(const cec_keypress& key);

@@ -179,7 +179,7 @@ namespace CEC
      * @param configuration The configuration to store.
      * @return True when the configuration was persisted, false otherwise.
      */
-    virtual bool PersistConfiguration(const libcec_configuration &configuration) = 0;
+    virtual bool SaveConfiguration(const libcec_configuration &configuration) = 0;
 
     /*!
      * @brief Enable or disable auto mode (only supported by P8 USB-CEC)
@@ -237,6 +237,10 @@ namespace CEC
      * @param bClientUnregistered True when the client was unregistered, false when the device was explicitly marked as (in)active source
      */
     virtual void SetActiveSource(bool bSetTo, bool bClientUnregistered) = 0;
+
+#if CEC_LIB_VERSION_MAJOR >= 5
+    virtual bool GetStats(struct cec_adapter_stats* stats) = 0;
+#endif
 
     IAdapterCommunicationCallback *m_callback;
   };
